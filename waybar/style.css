@@ -1,0 +1,146 @@
+@define-color background #1e2127;
+@define-color foreground #abb2bf;
+
+@define-color normal-black   #1e2127;
+@define-color normal-red     #e06c75;
+@define-color normal-green   #98c379;
+@define-color normal-yellow  #d19a66;
+@define-color normal-blue    #61afef;
+@define-color normal-magenta #c678dd;
+@define-color normal-cyan    #56b6c2;
+@define-color normal-white   #828791;
+
+@define-color bright-black   #5c6370;
+@define-color bright-red     #e06c75;
+@define-color bright-green   #98c379;
+@define-color bright-yellow  #d19a66;
+@define-color bright-blue    #61afef;
+@define-color bright-magenta #c678dd;
+@define-color bright-cyan    #56b6c2;
+@define-color bright-white   #e6efff;
+
+@define-color dim-black   #1e2127;
+@define-color dim-red     #e06c75;
+@define-color dim-green   #98c379;
+@define-color dim-yellow  #d19a66;
+@define-color dim-blue    #61afef;
+@define-color dim-magenta #c678dd;
+@define-color dim-cyan    #56b6c2;
+@define-color dim-white   #828791;
+
+* {
+	border: none;
+	border-radius: 0;
+	font-family: "JetBrainsMono Nerd Font";
+	font-size: 14px;
+	min-height: 0;
+}
+
+window#waybar {
+	background: @background;
+	opacity: 0.90;
+}
+
+#workspaces {
+	margin: 0px;
+}
+
+#workspaces button {
+	color: @foreground;
+	padding: 0px 10px 2px 10px;
+}
+
+#workspaces button:hover {
+	color: @foreground;
+	background: rgba(68, 68, 68, 0.9);
+}
+
+#workspaces button.focused {
+	color: @foreground;	
+	background: rgba(68, 68, 68, 0.9);
+	box-shadow: inset 0px -3px @foreground;
+}
+
+#workspaces button.focused:hover {
+	color: @foreground;
+	background: rgba(68, 68, 68, 0.9);
+	box-shadow: inset 0px -3px @foreground;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#workspaces button#sway-workspace-1 {
+    color: @normal-red;
+}
+#workspaces button#sway-workspace-2 {
+    color: @normal-green;
+}
+#workspaces button#sway-workspace-3 {
+    color: @normal-yellow;
+}
+#workspaces button#sway-workspace-4 {
+    color: @normal-blue;
+}
+#workspaces button#sway-workspace-5 {
+    color: @normal-magenta;
+}
+#workspaces button#sway-workspace-6 {
+    color: @normal-cyan;
+}
+
+#mode {
+	color: @background;
+	background-color: @normal-red;
+	padding: 0 10px;
+}
+
+#custom-date, #clock, #battery, #pulseaudio, #network, #cpu, #memory, #temperature {
+	background: @background;
+	padding: 0px 10px 2px 10px;
+	color: @foreground;
+}
+
+#custom-arch {
+	background: #1793d1;
+	padding: 0px 10px 2px 10px;
+	color: @background;
+}
+
+#custom-date {
+}
+
+#custom-power {
+}
+
+#clock {
+}
+#battery {
+}
+
+@keyframes blink {
+	to {
+		background-color: #ffffff;
+		color: black;
+	}
+}
+
+#battery.charging {
+}
+
+#battery.critical:not(.charging) {
+	background-color: #f53c3c;
+	color: #ffffff;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#network {
+}
+
+#pulseaudio {
+}

@@ -1,0 +1,107 @@
+{
+	"layer": "top",
+	"position": "top",
+	"modules-left": ["custom/arch", "sway/workspaces", "sway/mode"],
+	"modules-right": ["network", "temperature", "cpu", "memory", "pulseaudio", "battery", "clock"],
+	"sway/window": {
+		"max-length": 50
+	},
+	"custom/arch": {
+        "format": "<span font='Font Awesome 6 Free 16'>{icon}</span>",
+        "format-icons": [""]
+	},
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"disable-markup": false,
+		"format": "{icon}",
+		"format-icons": {
+			"1": "<span font='Font Awesome 6 Free 16'></span>",
+			"2": "<span font='Font Awesome 6 Free 16'>爵</span>",
+			"3": "<span font='Font Awesome 6 Free 16'></span>",
+			"4": "<span font='Font Awesome 6 Free 16'></span>",
+			"5": "<span font='Font Awesome 6 Free 16'></span>",
+			"6": "<span font='Font Awesome 6 Free 16'>6</span>",
+			"7": "<span font='Font Awesome 6 Free 16'>7</span>",
+			"8": "<span font='Font Awesome 6 Free 16'>8</span>",
+			"9": "<span font='Font Awesome 6 Free 16'>9</span>",
+			"10": "<span font='Font Awesome 6 Free 16'>10</span>"
+		},
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": []
+		}
+	},
+	"sway/mode": {
+        "format": "{}"
+    },
+	"network": {
+		"format-wifi": " {signalStrength}",
+		"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "  Disconnected",
+		"format-alt": "{ifname}: {ipaddr}/{cidr}"
+	},
+	"temperature": {
+		// "thermal-zone": 2,
+		// "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+		// "critical-threshold": 80,
+		// "format-critical": "{temperatureC}°C ",
+		"format": " {temperatureC}°C"
+	},
+	"cpu": {
+        "format": " {usage}%",
+        "tooltip": false,
+		"interval": 1,
+		"min-length": 5
+    },
+	"memory": {
+		"format": " {percentage}%",
+		"interval": 1
+	},
+	"pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+	"battery": {
+		"bat": "BAT0",
+		"adapter": "ADP1",
+		"states": {
+		  "warning": 30,
+		  "critical": 15
+		},
+		"format": "{icon}  {capacity}%",
+		"format-alt": "{icon}  {time}",
+		"format-charging": " {capacity}%",
+		"format-plugged": "  {capacity}%",
+		"format-icons": ["", "", "", "", ""],
+		"interval": 3
+	},
+	"clock": {
+		"format": " {:%H:%M}",
+		"format-alt": " {:%Y-%m-%d %H:%M}",
+		"interval": 60
+	},
+	"custom/power": {
+        "format": "<span font='Font Awesome 6 Free 16'>{icon}</span>",
+        "format-icons": [""]
+	}
+}
