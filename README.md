@@ -9,4 +9,4 @@ This setup uses:
 - Launcher: wofi
 - Shell: fish with starship prompt
 
-I use Arch Linux BTW
+As for my OS I use Arch Linux BTW.
