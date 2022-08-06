@@ -49,8 +49,8 @@ exec_always gammastep
 # Example configuration:
 #
 exec_always swayidle -w \
-          timeout 300 'swaylock -f -i $wallpaper' \
-          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          timeout 600 'swaylock -f -i $wallpaper' \
+          timeout 620 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
           before-sleep 'swaylock -f -i $wallpaper'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
