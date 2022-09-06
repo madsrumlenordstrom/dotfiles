@@ -17,6 +17,7 @@ opt.number = true                   -- Show line number
 opt.relativenumber = true           -- Show relative line number
 opt.numberwidth = 2                 -- Minimum number coloum width
 opt.scrolloff = 8                   -- Minimum number of lines to show
+opt.sidescrolloff = 8               -- Minimum number of coloums to show
 opt.cursorline = true               -- Show underline
 opt.cursorlineopt = 'screenline'
 opt.showmatch = true                -- Highlight matching parenthesis
