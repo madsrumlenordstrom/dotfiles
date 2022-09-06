@@ -290,7 +290,9 @@ bindsym $mod+r mode "resize"
 	
 	default_border none
 
-	set $opacity 0.90
+	set $opacity 0.98
+#   exec_always /usr/share/sway/scripts/inactive-windows-transparency.py --opacity $opacity
+#   for_window [app_id="Alacritty", focused="true"] opacity $opacity
 #	for_window [class=".*"] opacity $opacity
 #	for_window [app_id="Alacritty"] opacity $opacity
 
