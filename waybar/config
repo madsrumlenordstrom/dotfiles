@@ -7,7 +7,7 @@
 		"max-length": 50
 	},
 	"custom/arch": {
-        "format": "<span font='Font Awesome 6 Free 16'>{icon}</span>",
+        "format": "<span font='Font Awesome 6 Free 13'>{icon}</span>",
         "format-icons": [""]
 	},
 	"sway/workspaces": {
@@ -16,16 +16,16 @@
 		"disable-markup": false,
 		"format": "{icon}",
 		"format-icons": {
-			"1": "<span font='Font Awesome 6 Free 16'></span>",
-			"2": "<span font='Font Awesome 6 Free 16'>爵</span>",
-			"3": "<span font='Font Awesome 6 Free 16'></span>",
-			"4": "<span font='Font Awesome 6 Free 16'></span>",
-			"5": "<span font='Font Awesome 6 Free 16'></span>",
-			"6": "<span font='Font Awesome 6 Free 16'>6</span>",
-			"7": "<span font='Font Awesome 6 Free 16'>7</span>",
-			"8": "<span font='Font Awesome 6 Free 16'>8</span>",
-			"9": "<span font='Font Awesome 6 Free 16'>9</span>",
-			"10": "<span font='Font Awesome 6 Free 16'>10</span>"
+			"1": "<span font='Font Awesome 6 Free 13'></span>",
+			"2": "<span font='Font Awesome 6 Free 13'>爵</span>",
+			"3": "<span font='Font Awesome 6 Free 13'></span>",
+			"4": "<span font='Font Awesome 6 Free 13'></span>",
+			"5": "<span font='Font Awesome 6 Free 13'></span>",
+			"6": "<span font='Font Awesome 6 Free 13'>6</span>",
+			"7": "<span font='Font Awesome 6 Free 13'>7</span>",
+			"8": "<span font='Font Awesome 6 Free 13'>8</span>",
+			"9": "<span font='Font Awesome 6 Free 13'>9</span>",
+			"10": "<span font='Font Awesome 6 Free 13'>10</span>"
 		},
 		"persistent_workspaces": {
 			"1": [],
@@ -33,7 +33,6 @@
 			"3": [],
 			"4": [],
 			"5": [],
-			"6": []
 		}
 	},
 	"sway/mode": {
@@ -47,11 +46,11 @@
 		"format-alt": "{ifname}: {ipaddr}/{cidr}"
 	},
 	"temperature": {
-		// "thermal-zone": 2,
-		// "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-		// "critical-threshold": 80,
-		// "format-critical": "{temperatureC}°C ",
-		"format": " {temperatureC}°C"
+		"thermal-zone": 2,
+		"critical-threshold": 80,
+		"format-critical": " {temperatureC}°C",
+		"format": " {temperatureC}°C",
+        "interval": 1
 	},
 	"cpu": {
         "format": " {usage}%",
@@ -101,7 +100,7 @@
 		"interval": 60
 	},
 	"custom/power": {
-        "format": "<span font='Font Awesome 6 Free 16'>{icon}</span>",
+        "format": "<span font='Font Awesome 6 Free 13'>{icon}</span>",
         "format-icons": [""]
 	}
 }

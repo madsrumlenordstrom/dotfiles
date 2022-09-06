@@ -38,7 +38,7 @@
 
 window#waybar {
 	background: @background;
-	opacity: 0.90;
+	opacity: 1.00;
 }
 
 #workspaces {
@@ -47,7 +47,7 @@ window#waybar {
 
 #workspaces button {
 	color: @foreground;
-	padding: 0px 10px 2px 10px;
+	padding: 1px 10px 3px 10px;
 }
 
 #workspaces button:hover {
