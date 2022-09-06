@@ -27,4 +27,7 @@ set -x _JAVA_OPTIONS -Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 set -x GNUPGHOME "$XDG_DATA_HOME"/gnupg
 set -x PYTHONSTARTUP "$XDG_CONFIG_HOME"/python/pythonrc
 
+# Wayland stuff
+set -x QT_QPA_PLATFORM wayland
+
 starship init fish | source
