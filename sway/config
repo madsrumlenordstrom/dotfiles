@@ -121,8 +121,8 @@ exec_always swayidle -w \
     bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
     # Brightness control
-    bindsym --locked XF86MonBrightnessDown exec ~/scripts/brightness-control.sh down
-    bindsym --locked XF86MonBrightnessUp exec ~/scripts/brightness-control.sh up 
+    bindsym --locked XF86MonBrightnessDown exec ~/.config/user-scripts/brightness-control.sh down
+    bindsym --locked XF86MonBrightnessUp exec ~/.config/user-scripts/brightness-control.sh up 
 
     # Keyboard backlight control
     bindsym --locked XF86KbdBrightnessDown exec brightnessctl -q --device=smc::kbd_backlight set 3%-
