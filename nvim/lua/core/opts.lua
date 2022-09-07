@@ -5,10 +5,8 @@ local opt = vim.opt
 -----------------------------------------------------------
 opt.mouse = 'a'                       -- Enable mouse support
 opt.clipboard = 'unnamedplus'         -- Copy/paste to system clipboard
-opt.swapfile = false                  -- Don't use swapfile
 opt.autoread = true                   -- Auto update file on external change
-opt.fileencoding = 'utf-8'
-opt.undofile = true
+opt.fileencoding = 'utf-8'            -- Encode in UTF-8
 
 -----------------------------------------------------------
 -- Neovim UI
@@ -20,7 +18,7 @@ opt.scrolloff = 8                   -- Minimum number of lines to show
 opt.sidescrolloff = 8               -- Minimum number of coloums to show
 opt.cursorline = true               -- Show underline
 opt.cursorlineopt = 'screenline'
-opt.showmatch = true                -- Highlight matching parenthesis
+-- opt.showmatch = true                -- Highlight matching parenthesis
 -- opt.foldmethod = 'marker'   -- Enable folding (default 'foldmarker')
 -- opt.colorcolumn = '72'      -- Line lenght marker at 80 columns
 -- opt.splitright = true       -- Vertical split to the right
@@ -37,3 +35,10 @@ opt.expandtab = true        -- Use spaces instead of tabs
 opt.shiftwidth = 4          -- Shift 4 spaces when tab
 opt.tabstop = 4             -- 1 tab == 4 spaces
 opt.smartindent = true      -- Autoindent new lines
+
+-----------------------------------------------------------
+-- Memory, CPU
+-----------------------------------------------------------
+opt.history = 100           -- Remember N lines in history
+opt.undofile = true
+opt.swapfile = false                  -- Don't use swapfile
