@@ -1,3 +1,3 @@
 function autoremove
-	paru -Rcns $(paru -Qdtq|tr "\n" " ")
+	paru -Rcns $(paru -Qdtq)
 end
