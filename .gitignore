@@ -9,3 +9,4 @@ dconf/
 code-flags.conf
 byobu/
 QtProject.conf
+nvim/plugin/
