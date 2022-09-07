@@ -17,7 +17,6 @@ opt.numberwidth = 2                 -- Minimum number coloum width
 opt.scrolloff = 8                   -- Minimum number of lines to show
 opt.sidescrolloff = 8               -- Minimum number of coloums to show
 opt.cursorline = true               -- Show underline
-opt.cursorlineopt = 'screenline'
 -- opt.showmatch = true                -- Highlight matching parenthesis
 -- opt.foldmethod = 'marker'   -- Enable folding (default 'foldmarker')
 -- opt.colorcolumn = '72'      -- Line lenght marker at 80 columns

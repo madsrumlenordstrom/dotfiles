@@ -10,4 +10,7 @@ return require('packer').startup(function(use)
   -- Onedark theme for neovim
   use 'navarasu/onedark.nvim'
 
+  -- Treesitter for syntax highlighting
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+
 end)
