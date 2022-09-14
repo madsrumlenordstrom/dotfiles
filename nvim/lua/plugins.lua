@@ -6,6 +6,7 @@ local function get_config(name)
 end
 
 return require('packer').startup(function(use)
+
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
@@ -20,6 +21,18 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     config = get_config('nvim-treesitter'),
     run = ':TSUpdate'
+  })
+
+  -- Language server protocol
+  use ({
+      'neovim/nvim-lspconfig',
+      config = get_config('nvim-lspconfig')
+  })
+
+  -- Automatic pairs of parantheses etc
+  use ({
+    'windwp/nvim-autopairs',
+    config = get_config('nvim-autopairs')
   })
 
 end)
