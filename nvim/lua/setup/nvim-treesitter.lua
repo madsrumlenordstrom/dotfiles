@@ -21,3 +21,10 @@ require'nvim-treesitter.configs'.setup {
     "yaml",
   },
 }
+
+-- Options to make tree-sitter do folding
+-- Maybe move these options to options file later
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- Do not fold automatically when opening file
+vim.opt.foldlevelstart = 99

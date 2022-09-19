@@ -7,6 +7,7 @@ opt.mouse = 'a'                       -- Enable mouse support
 opt.clipboard = 'unnamedplus'         -- Copy/paste to system clipboard
 opt.autoread = true                   -- Auto update file on external change
 opt.fileencoding = 'utf-8'            -- Encode in UTF-8
+opt.timeoutlen = 500
 
 -----------------------------------------------------------
 -- Neovim UI
