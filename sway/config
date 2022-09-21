@@ -104,7 +104,7 @@ input "type:pointer" {
 bindsym $mod+Return exec $term 
 
     # Kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
     # Start your launcher
 bindsym $mod+d exec $menu
@@ -117,10 +117,10 @@ bindsym $mod+d exec $menu
 floating_modifier $mod normal
 
 # Reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+c reload
 
 # Lock screen
-bindsym $mod+Shift+x exec swaylock
+bindsym $mod+x exec swaylock
 
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -219,7 +219,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10; workspace $ws10
 # We just use 1-10 as the default.
 
 # Specify were to put programs
-assign [app_id="firefox"] workspace $ws2
+assign [app_id="brave-browser"] workspace $ws2
 assign [app_id="Code"] workspace $ws3
 
 #
@@ -294,17 +294,17 @@ bindsym $mod+r mode "resize"
 #
 
 # Gaps
-set $default_gaps_inner 10
+set $default_gaps_inner 6
 set $default_gaps_outer 0
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
-smart_gaps on
+smart_gaps off
 
 # Borders
 smart_borders off
-hide_edge_borders --i3 both
+ hide_edge_borders --i3 none
 
-default_border none
+default_border pixel 3
 
 set $opacity 0.98
 #   exec_always /usr/share/sway/scripts/inactive-windows-transparency.py --opacity $opacity
@@ -312,6 +312,11 @@ set $opacity 0.98
 #	for_window [class=".*"] opacity $opacity
 #	for_window [app_id="Alacritty"] opacity $opacity
 
+# Colors
+client.focused #ABB2BF #1E2127 #ABB2BF #FFFFFF #1E2127
+
+# Font for title bar
+font $uifont
 
 #
 # Status Bar:

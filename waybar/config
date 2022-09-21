@@ -1,33 +1,40 @@
 {
-	"layer": "top",
+	"layer": "bottom",
 	"position": "top",
-	"modules-left": ["custom/arch", "sway/workspaces", "sway/mode"],
+	"modules-left": ["custom/arch", "sway/workspaces", "sway/mode", "sway/window"],
+    "modules-center": [],
 	"modules-right": ["network", "temperature", "cpu", "memory", "pulseaudio", "battery", "clock"],
+    "height": 25,
+    "margin-top": 6,
+    "margin-left": 6,
+    "margin-right": 6,
+    "margin-bottom": 0,
+    "spacing": 2,
 	"sway/window": {
 		"max-length": 50
 	},
 	"custom/arch": {
-        "format": "<span font='Font Awesome 6 Free 13'>{icon}</span>",
+        "format": "{icon}",
         "format-icons": [""]
 	},
 	"sway/workspaces": {
 		"disable-scroll": true,
 		"all-outputs": true,
 		"disable-markup": false,
-		"format": "{icon}",
-		"format-icons": {
-			"1": "<span font='Font Awesome 6 Free 13'></span>",
-			"2": "<span font='Font Awesome 6 Free 13'>爵</span>",
-			"3": "<span font='Font Awesome 6 Free 13'></span>",
-			"4": "<span font='Font Awesome 6 Free 13'></span>",
-			"5": "<span font='Font Awesome 6 Free 13'></span>",
-			"6": "<span font='Font Awesome 6 Free 13'>6</span>",
-			"7": "<span font='Font Awesome 6 Free 13'>7</span>",
-			"8": "<span font='Font Awesome 6 Free 13'>8</span>",
-			"9": "<span font='Font Awesome 6 Free 13'>9</span>",
-			"10": "<span font='Font Awesome 6 Free 13'>10</span>"
-		},
-		"persistent_workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "6",
+	        "7": "7",
+	        "8": "8",
+	        "9": "9",
+	        "10": "10"
+        },
+        "persistent_workspaces": {
 			"1": [],
 			"2": [],
 			"3": [],
@@ -39,21 +46,21 @@
         "format": "{}"
     },
 	"network": {
-		"format-wifi": " {signalStrength}",
+		"format-wifi": " {signalStrength:3}",
 		"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
 		"format-linked": "{ifname} (No IP) ",
-		"format-disconnected": "  Disconnected",
+		"format-disconnected": "睊  Disconnected",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}"
 	},
 	"temperature": {
 		"thermal-zone": 2,
-		"critical-threshold": 80,
-		"format-critical": " {temperatureC}°C",
-		"format": " {temperatureC}°C",
+		"critical-threshold": 90,
+		"format-critical": " {temperatureC:3}°C",
+		"format": " {temperatureC:3}°C",
         "interval": 1
 	},
 	"cpu": {
-        "format": " {usage}%",
+        "format": " {usage:3}%",
         "tooltip": false,
 		"interval": 1,
 		"min-length": 5
@@ -63,11 +70,11 @@
 		"interval": 1
 	},
 	"pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-bluetooth": " {volume}%",
+        "format": "{icon} {volume:3}%",
+        "format-bluetooth": " {volume:3}%",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
+        "format-source": "{volume:3}% ",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -87,20 +94,19 @@
 		  "warning": 30,
 		  "critical": 15
 		},
-		"format": "{icon}  {capacity}%",
-		"format-alt": "{icon}  {time}",
-		"format-charging": " {capacity}%",
-		"format-plugged": "  {capacity}%",
+		"format": "{icon}  {capacity:3}%",
+		"format-charging": " {capacity:3}%",
+		"format-plugged": "  {capacity:3}%",
 		"format-icons": ["", "", "", "", ""],
-		"interval": 3
+		"interval": 10
 	},
 	"clock": {
-		"format": " {:%H:%M}",
-		"format-alt": " {:%Y-%m-%d %H:%M}",
+		"format": " {:%Y-%m-%d %H:%M}",
+		"format-alt": " {:%H:%M}",
 		"interval": 60
 	},
 	"custom/power": {
-        "format": "<span font='Font Awesome 6 Free 13'>{icon}</span>",
+        "format": "<span font='JetBrainsMono Nerd Font 13'>{icon}</span>",
         "format-icons": [""]
 	}
 }

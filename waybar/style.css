@@ -41,52 +41,43 @@ window#waybar {
 	opacity: 1.00;
 }
 
+#window {
+    color: @foreground;
+}
+
 #workspaces {
 	margin: 0px;
 }
 
 #workspaces button {
-	color: @foreground;
-	padding: 1px 10px 3px 10px;
-}
-
-#workspaces button:hover {
-	color: @foreground;
-	background: rgba(68, 68, 68, 0.9);
-}
-
-#workspaces button.focused {
-	color: @foreground;	
-	background: rgba(68, 68, 68, 0.9);
-	box-shadow: inset 0px -3px @foreground;
+	background: @background;
+	padding: 1px 10px 1px 10px;
 }
 
 #workspaces button.focused:hover {
-	color: @foreground;
-	background: rgba(68, 68, 68, 0.9);
-	box-shadow: inset 0px -3px @foreground;
+    color: @foreground;
 }
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }
 
-#workspaces button#sway-workspace-1 {
+#workspaces button#sway-workspace-1.focused {
     color: @normal-red;
 }
-#workspaces button#sway-workspace-2 {
+#workspaces button#sway-workspace-2.focused {
     color: @normal-green;
 }
-#workspaces button#sway-workspace-3 {
+#workspaces button#sway-workspace-3.focused {
     color: @normal-yellow;
 }
-#workspaces button#sway-workspace-4 {
+#workspaces button#sway-workspace-4.focused {
     color: @normal-blue;
 }
-#workspaces button#sway-workspace-5 {
+#workspaces button#sway-workspace-5.focused {
     color: @normal-magenta;
 }
-#workspaces button#sway-workspace-6 {
+#workspaces button#sway-workspace-6.focused {
     color: @normal-cyan;
 }
 
@@ -103,9 +94,9 @@ window#waybar {
 }
 
 #custom-arch {
-	background: #1793d1;
-	padding: 0px 10px 2px 10px;
-	color: @background;
+	color: #1793d1;
+	padding: 0px 10px 0px 10px;
+	background: @background;
 }
 
 #custom-date {
