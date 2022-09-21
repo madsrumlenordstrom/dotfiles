@@ -26,7 +26,7 @@ opt.cursorline = true               -- Show underline
 opt.ignorecase = true               -- Ignore case letters when search
 opt.smartcase = true                -- Ignore lowercase for the whole pattern
 opt.wrap = false
-
+vim.cmd("hi Normal ctermbg=NONE guibg=NONE")
 -----------------------------------------------------------
 -- Tabs, indent
 -----------------------------------------------------------
