@@ -13,7 +13,7 @@ set -x EDITOR nvim
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 # Set browser
-set -x BROWSER brave 
+set -x BROWSER firefox
 
 # XDG stuff
 set -x XDG_CONFIG_HOME "$HOME"/.config
