@@ -1,7 +1,7 @@
 {
 	"layer": "bottom",
 	"position": "top",
-	"modules-left": ["custom/arch", "sway/workspaces", "sway/mode", "sway/window"],
+	"modules-left": ["sway/mode", "custom/arch", "sway/workspaces", "sway/window"],
     "modules-center": [],
 	"modules-right": ["network", "temperature", "cpu", "memory", "pulseaudio", "battery", "clock"],
     "height": 25,
