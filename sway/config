@@ -103,13 +103,13 @@ input "type:pointer" {
 #
 # Basics:
 #
-    # Start a terminal
+# Start a terminal
 bindsym $mod+Return exec $term 
 
-    # Kill focused window
+# Kill focused window
 bindsym $mod+q kill
 
-    # Start your launcher
+# Start your launcher
 bindsym $mod+d exec $menu
 
 # Drag floating windows by holding down $mod and left mouse button.
