@@ -27,7 +27,7 @@ set $term alacritty
 set $menu wofi -Imi --show drun | xargs swaymsg exec -- #bemenu-run --fn $uifont 
 
 # Wallpaper
-set $wallpaper ~/Pictures/monterey.jpg
+set $wallpaper ~/Pictures/wallpapers/monterey.jpg
 
 # Lock command
 set $lock swaylock -f -i $wallpaper
@@ -51,6 +51,8 @@ output '*' bg $wallpaper fill
 
 # Start gammastep (blue light filter)
 exec_always gammastep
+
+seat seat0 xcursor_theme Breeze_Snow 48
 
 ### Idle configuration
 #
@@ -126,7 +128,7 @@ bindsym $mod+c reload
 bindsym $mod+x exec $lock
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
 
 # Brightness control
 bindsym --locked XF86MonBrightnessDown exec ~/.config/user-scripts/brightness-control.sh down
@@ -146,10 +148,16 @@ bindsym --locked XF86AudioPlay exec playerctl --player playerctld play-pause
 bindsym --locked XF86AudioNext exec playerctl --player playerctld next
 bindsym --locked XF86AudioPrev exec playerctl --player playerctld previous
 
-# Run application launcher 
-bindsym XF86LaunchB exec $menu # Maybe a little redundant along with Super+d
-# TODO
-# XF86LaunchA f3
+# Screenshots
+# Full screen
+bindsym $mod+Shift+XF86LaunchA exec /usr/share/sway/scripts/grimshot save output
+bindsym $mod+Ctrl+Shift+XF86LaunchA exec /usr/share/sway/scripts/grimshot copy output
+# Selected area
+bindsym $mod+Shift+XF86LaunchB exec /usr/share/sway/scripts/grimshot save area
+bindsym $mod+Ctrl+Shift+XF86LaunchB exec /usr/share/sway/scripts/grimshot copy area
+# Specific window
+bindsym $mod+Shift+XF86KbdBrightnessDown exec /usr/share/sway/scripts/grimshot save window
+bindsym $mod+Ctrl+Shift+XF86KbdBrightnessDown exec /usr/share/sway/scripts/grimshot copy window
 
 
 #
@@ -235,7 +243,6 @@ assign [app_id="Code"] workspace $ws3
 bindsym $mod+v splitt
 
 # Switch the current container between different layout styles
-bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -247,9 +254,6 @@ bindsym $mod+Shift+space floating toggle
 
 # Swap focus between the tiling area and the floating area
 bindsym $mod+space focus mode_toggle
-
-# Move focus to the parent container
-bindsym $mod+a focus parent
 
 #
 # Scratchpad:
