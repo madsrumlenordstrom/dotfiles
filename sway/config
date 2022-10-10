@@ -27,7 +27,10 @@ set $term alacritty
 set $menu wofi -Imi --show drun | xargs swaymsg exec -- #bemenu-run --fn $uifont 
 
 # Wallpaper
-set $wallpaper ~/Pictures/big-sur.jpg
+set $wallpaper ~/Pictures/monterey.jpg
+
+# Lock command
+set $lock swaylock -f -i $wallpaper
 
 # XWayland
 xwayland disabled
@@ -54,9 +57,9 @@ exec_always gammastep
 # Example configuration:
 #
 exec_always swayidle -w \
-          timeout 600 'swaylock -f -i $wallpaper' \
+          timeout 600  $lock \
           timeout 620 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -f -i $wallpaper'
+          before-sleep $lock
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -120,7 +123,7 @@ floating_modifier $mod normal
 bindsym $mod+c reload
 
 # Lock screen
-bindsym $mod+x exec swaylock
+bindsym $mod+x exec $lock
 
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
