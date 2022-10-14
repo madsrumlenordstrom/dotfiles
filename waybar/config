@@ -1,9 +1,9 @@
 {
 	"layer": "bottom",
 	"position": "top",
-	"modules-left": ["sway/mode", "custom/arch", "sway/workspaces", "sway/window"],
-    "modules-center": [],
-	"modules-right": ["network", "temperature", "cpu", "memory", "pulseaudio", "battery", "clock"],
+	"modules-left": ["sway/mode", "custom/arch", "sway/workspaces"],
+    "modules-center": ["clock"],
+	"modules-right": ["network", "temperature", "cpu", "memory", "pulseaudio", "battery"],
     "height": 25,
     "margin-top": 6,
     "margin-left": 6,
@@ -40,6 +40,11 @@
 			"3": [],
 			"4": [],
 			"5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+			"9": [],
+			"10": [],
 		}
 	},
 	"sway/mode": {

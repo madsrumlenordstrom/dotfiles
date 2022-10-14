@@ -83,8 +83,9 @@ exec_always swayidle -w \
 
 # Keyboard
 input "type:keyboard" {
-    xkb_layout dk(mac_nodeadkeys)
-} 
+        xkb_layout us(mac),dk(mac)
+        xkb_options grp:win_space_toggle
+    } 
 
 # Touchpad
 input "type:touchpad" {
