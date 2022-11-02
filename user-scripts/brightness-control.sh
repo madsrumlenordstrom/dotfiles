@@ -22,4 +22,3 @@ sleep $sleep_dur
 brightnessctl -q set $ctl
 sleep $sleep_dur
 brightnessctl -q set $ctl
-echo $ctl

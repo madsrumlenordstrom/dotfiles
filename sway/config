@@ -52,7 +52,7 @@ output '*' bg $wallpaper fill
 # Start gammastep (blue light filter)
 exec_always gammastep
 
-seat seat0 xcursor_theme Breeze_Snow 48
+seat seat0 xcursor_theme Breeze_Snow 24
 
 ### Idle configuration
 #
@@ -67,6 +67,9 @@ exec_always swayidle -w \
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
+# Lock screen on lid switch
+
+bindswitch --reload --locked lid:on exec $lock
 ### Input configuration
 #
 # Example configuration:
@@ -231,7 +234,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10; workspace $ws10
 # We just use 1-10 as the default.
 
 # Specify were to put programs
-assign [app_id="brave-browser"] workspace $ws2
+for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, border normal
+assign [app_id="firefox"] workspace $ws2
 assign [app_id="Code"] workspace $ws3
 
 #
