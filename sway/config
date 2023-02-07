@@ -33,7 +33,7 @@ set $wallpaper ~/Pictures/wallpapers/monterey.jpg
 set $lock swaylock -f -i $wallpaper
 
 # XWayland
-xwayland enabled
+xwayland disabled
 
 ### Output configuration
 #
@@ -52,16 +52,18 @@ output '*' bg $wallpaper fill
 # Start gammastep (blue light filter)
 exec_always gammastep
 
-seat seat0 xcursor_theme Breeze_Snow 24
+seat seat0 xcursor_theme Breeze_Snow 32
 
 ### Idle configuration
 #
 # Example configuration:
 #
-exec_always swayidle -w \
-          timeout 600  $lock \
-          timeout 620 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep $lock
+exec swayidle -w \
+          timeout 10 'if pgrep -x swaylock; then swaymsg "output * power off"; fi' \
+          resume 'swaymsg "output * dpms on"' \
+          timeout 20 '$lock' \
+          timeout 30 'swaymsg "output * dpms off"' \
+          resume 'swaymsg "output * dpms on"'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -93,7 +95,7 @@ input "type:keyboard" {
 # Touchpad
 input "type:touchpad" {
     accel_profile adaptive
-    pointer_accel 0.07
+    pointer_accel 0.20
 	natural_scroll enabled
 	scroll_factor 0.35
     dwt disabled
