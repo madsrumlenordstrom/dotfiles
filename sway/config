@@ -24,10 +24,10 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi -Imi --show drun | xargs swaymsg exec -- #bemenu-run --fn $uifont 
+set $menu wofi -Imi --show drun | xargs swaymsg exec -- 
 
 # Wallpaper
-set $wallpaper ~/Pictures/wallpapers/monterey.jpg
+set $wallpaper ~/Pictures/wallpapers/skyline.jpg
 
 # Lock command
 set $lock swaylock -f -i $wallpaper
@@ -61,8 +61,8 @@ seat seat0 xcursor_theme Breeze_Snow 32
 exec swayidle -w \
           timeout 10 'if pgrep -x swaylock; then swaymsg "output * power off"; fi' \
           resume 'swaymsg "output * dpms on"' \
-          timeout 20 '$lock' \
-          timeout 30 'swaymsg "output * dpms off"' \
+          timeout 600 '$lock' \
+          timeout 610 'swaymsg "output * dpms off"' \
           resume 'swaymsg "output * dpms on"'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -88,7 +88,7 @@ bindswitch --reload --locked lid:on exec $lock
 
 # Keyboard
 input "type:keyboard" {
-        xkb_layout us(mac),dk(mac)
+        xkb_layout dk(mac),us(mac)
         xkb_options grp:win_space_toggle
     } 
 
@@ -134,7 +134,7 @@ bindsym $mod+c reload
 bindsym $mod+x exec $lock
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'Do you want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+e exec swaymsg exit
 
 # Brightness control
 bindsym --locked XF86MonBrightnessDown exec ~/.config/user-scripts/brightness-control.sh down
