@@ -4,7 +4,19 @@
 
 ctl=""
 
-sleep_dur=0.02
+msgTag="systemVolume"
+
+showVol() {
+	volume="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{ print $2 }' | sed -r 's/(\.|0.|0.0)//')" 
+
+	if [ "$volume" = "0" ]; then
+	    # Show the sound muted notification
+	    dunstify -a "changeVolume" -u low --icon=/usr/share/icons/Papirus-Dark/16x16/actions/audio-volume-muted.svg -h string:x-dunst-stack-tag:$msgTag -h int:value:"$volume" "Volume: muted" 
+	else
+	    # Show the volume notification
+	    dunstify -a "changeVolume" -u low --icon=/usr/share/icons/Papirus-Dark/16x16/actions/audio-volume-high.svg -h string:x-dunst-stack-tag:$msgTag -h int:value:"$volume" "Volume: ${volume}%"
+	fi
+}
 
 if [ "$1" = "up" ]
 then
@@ -18,12 +30,15 @@ else
 fi
 
 wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
+showVol
 wpctl $ctl
-sleep $sleep_dur
+showVol
 wpctl $ctl
-sleep $sleep_dur
+showVol
 wpctl $ctl
-sleep $sleep_dur
+showVol
 wpctl $ctl
-sleep $sleep_dur
+showVol
 wpctl $ctl
+showVol
+
