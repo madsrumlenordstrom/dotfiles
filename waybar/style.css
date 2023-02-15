@@ -93,6 +93,14 @@ window#waybar {
 	color: @foreground;
 }
 
+#battery {
+}
+
+#pulseaudio {
+}
+
+#network {
+}
 #custom-arch {
 	color: #1793d1;
 	padding: 0px 10px 0px 10px;
