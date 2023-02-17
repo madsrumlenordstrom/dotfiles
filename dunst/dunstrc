@@ -311,7 +311,7 @@
     background = "#1e2127"
     foreground = "#abb2bf"
     highlight = "#abb2bf"
-    timeout = 5
+    timeout = 3
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
@@ -319,7 +319,7 @@
     background = "#1e2127"
     foreground = "#abb2bf"
     highlight = "#abb2bf"
-    timeout = 5
+    timeout = 3
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
 
