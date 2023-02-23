@@ -4,7 +4,7 @@
 
 ctl=""
 
-sleep_dur=0.03
+sleep_dur=0.035
 
 msgTag="screen-brightness"
 
