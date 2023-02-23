@@ -27,7 +27,7 @@ set $term alacritty
 set $menu wofi -Imi --show drun | xargs swaymsg exec -- 
 
 # Wallpaper
-set $wallpaper ~/Pictures/wallpapers/skyline.jpg
+set $wallpaper ~/Pictures/wallpapers/monterey-dark.jpg
 
 # Lock command
 set $lock swaylock -f -i $wallpaper
@@ -141,8 +141,8 @@ bindsym --locked XF86MonBrightnessDown exec ~/.config/user-scripts/brightness-co
 bindsym --locked XF86MonBrightnessUp exec ~/.config/user-scripts/brightness-control.sh up 
 
 # Keyboard backlight control
-bindsym --locked XF86KbdBrightnessDown exec brightnessctl -q --device=smc::kbd_backlight set 3%-
-bindsym --locked XF86KbdBrightnessUp exec brightnessctl -q --device=smc::kbd_backlight set 3%+
+bindsym --locked XF86KbdBrightnessDown exec ~/.config/user-scripts/kb-brightness-control.sh down
+bindsym --locked XF86KbdBrightnessUp exec ~/.config/user-scripts/kb-brightness-control.sh up
 
 # Volume control
 bindsym --locked XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
