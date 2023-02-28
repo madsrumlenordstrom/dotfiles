@@ -10,6 +10,7 @@ if status is-interactive
     abbr --add qs paru -Qs
     abbr --add syu paru -Syu
     abbr --add yeet paru -Rcns
+    abbr --add hx helix
 end
 
 starship init fish | source
