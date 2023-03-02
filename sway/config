@@ -1,11 +1,5 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
 ### Variables
-#
+
 # Global font
 set $uifont "JetBrainsMono Nerd Font 10"
 
@@ -36,15 +30,6 @@ set $lock swaylock -f -i $wallpaper
 xwayland disabled
 
 ### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /home/madsrumlenordstrom/Pictures/sam-moghadam-khamseh-s8wknXs_O7U-unsplash.jpg fill
-#
-# Example configuration:
-#
-#   output eDP-1 resolution 2560x1600
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
 
 # Set wallpaper
 output '*' bg $wallpaper fill
@@ -52,39 +37,21 @@ output '*' bg $wallpaper fill
 # Start gammastep (blue light filter)
 exec_always gammastep
 
+# Cursor/pointer theme and size
 seat seat0 xcursor_theme Breeze_Snow 32
 
 ### Idle configuration
-#
-# Example configuration:
-#
 exec swayidle -w \
           timeout 10 'if pgrep -x swaylock; then swaymsg "output * power off"; fi' \
           resume 'swaymsg "output * dpms on"' \
           timeout 600 '$lock' \
           timeout 610 'swaymsg "output * dpms off"' \
           resume 'swaymsg "output * dpms on"'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
 
 # Lock screen on lid switch
-
 bindswitch --reload --locked lid:on exec $lock
+
 ### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
 
 # Keyboard
 input "type:keyboard" {
@@ -108,9 +75,7 @@ input "type:pointer" {
 }
 
 ### Key bindings
-#
-# Basics:
-#
+
 # Start a terminal
 bindsym $mod+Return exec $term 
 
@@ -120,10 +85,6 @@ bindsym $mod+q kill
 # Start your launcher
 bindsym $mod+d exec $menu
 
-# Drag floating windows by holding down $mod and left mouse button.
-# Resize them with right mouse button + $mod.
-# Despite the name, also works for non-floating windows.
-# Change normal to inverse to use left mouse button for resizing and right
 # mouse button for dragging.
 floating_modifier $mod normal
 
@@ -165,11 +126,6 @@ bindsym $mod+Ctrl+Shift+XF86LaunchB exec /usr/share/sway/scripts/grimshot copy a
 bindsym $mod+Shift+XF86KbdBrightnessDown exec /usr/share/sway/scripts/grimshot save window
 bindsym $mod+Ctrl+Shift+XF86KbdBrightnessDown exec /usr/share/sway/scripts/grimshot copy window
 
-
-#
-# Moving around:
-#
-
 # Move your focus around
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -193,9 +149,6 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-#
-# Workspaces:
-#
 
 # Set workspace variables
 set $ws1 "1"
@@ -232,21 +185,13 @@ bindsym $mod+Shift+7 move container to workspace number $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10; workspace $ws10
-# Note: workspaces can have any name you want, not just numbers.
-# We just use 1-10 as the default.
 
 # Specify were to put programs
 for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, border normal
 assign [app_id="firefox"] workspace $ws2
 assign [app_id="Code"] workspace $ws3
 
-#
-# Layout stuff:
-#
-
-# You can "split" the current object of your focus with
-# $mod+b or $mod+v, for horizontal and vertical splits
-# respectively.
+# Toggle split
 bindsym $mod+v splitt
 
 # Switch the current container between different layout styles
@@ -262,10 +207,6 @@ bindsym $mod+Shift+space floating toggle
 # Swap focus between the tiling area and the floating area
 bindsym $mod+space focus mode_toggle
 
-#
-# Scratchpad:
-#
-
 # Sway has a "scratchpad", which is a bag of holding for windows.
 # You can send windows there and get them back later.
 
@@ -276,9 +217,7 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
-#
 # Resizing containers:
-#
 mode "resize" {
     # left will shrink the containers width
     # right will grow the containers width
@@ -301,10 +240,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-
-#
-# Windows and borders
-#
+### Windows and borders
 
 # Gaps
 set $default_gaps_inner 6
@@ -322,9 +258,6 @@ default_border pixel 2
 
 set $opacity 0.98
 #   exec_always /usr/share/sway/scripts/inactive-windows-transparency.py --opacity $opacity
-#   for_window [app_id="Alacritty", focused="true"] opacity $opacity
-#	for_window [class=".*"] opacity $opacity
-#	for_window [app_id="Alacritty"] opacity $opacity
 
 # Colors
 client.focused #ABB2BF #1E2127 #ABB2BF #FFFFFF #ABB2BF
@@ -332,10 +265,8 @@ client.focused #ABB2BF #1E2127 #ABB2BF #FFFFFF #ABB2BF
 # Font for title bar
 font $uifont
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
+### Status Bar:
+
 bar { 
 	swaybar_command waybar
 }

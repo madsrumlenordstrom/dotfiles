@@ -1,6 +1,6 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    abbr --add autoremove "paru -Qtdq | paru -Rcns"
+    abbr --add autoremove "paru -Qtdq | paru -Rcns -"
     abbr --add la exa -la --icons --colour=automatic --time-style=long-iso
     abbr --add ll exa -l --icons --colour=automatic --time-style=long-iso
     abbr --add ls exa
