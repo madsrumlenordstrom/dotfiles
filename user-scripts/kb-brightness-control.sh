@@ -13,16 +13,21 @@ showBright() {
 	bright="$(brightnessctl -m --device=smc::kbd_backlight get)" 
 	bright=$(($bright * 100 / 255))
 	bright=$(($bright + $val))
-  # Show the volume notification
+	if [ "$bright" -le "0" ]
+	then
+		bright=0
+	fi  # Show the volume notification
   dunstify -a "change-kb-brightness" -u low --icon=/usr/share/icons/Papirus-Dark/symbolic/status/keyboard-brightness-symbolic.svg -h string:x-dunst-stack-tag:$msgTag -h int:value:"$bright" "Keyboard brightness"
 }
 
 if [ "$1" = "up" ]
 then
 	ctl="1%+"
+	val=3
 elif [ "$1" = "down" ]
 then
 	ctl="1%-"
+	val=-3
 else
 	echo "Print help message"
 	exit 1

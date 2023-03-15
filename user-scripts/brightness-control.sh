@@ -13,6 +13,10 @@ showBright() {
 	bright="$(brightnessctl -m get)" 
 	bright=$(($bright * 100 / 1388))
 	bright=$(($bright + $val))
+	if [ "$bright" -le "0" ]
+	then
+		bright=0
+	fi
   # Show the volume notification
   dunstify -a "change-brightness" -u low --icon=/usr/share/icons/Papirus-Dark/symbolic/status/display-brightness-symbolic.svg -h string:x-dunst-stack-tag:$msgTag -h int:value:"$bright" "Screen brightness"
 }
