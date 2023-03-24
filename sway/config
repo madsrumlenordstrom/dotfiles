@@ -1,7 +1,7 @@
 ### Variables
 
-# Global font
-set $uifont "JetBrainsMono Nerd Font 10"
+# Global font (is actually set in fontconfig)
+set $uifont "monospace 10"
 
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
@@ -250,17 +250,18 @@ gaps outer $default_gaps_outer
 smart_gaps off
 
 # Borders
-smart_borders on
+smart_borders off
 hide_edge_borders --i3 none
 
 #bindsym $mod+y border pixel 20
-default_border pixel 2
+default_border pixel 1
 
 set $opacity 0.98
 #   exec_always /usr/share/sway/scripts/inactive-windows-transparency.py --opacity $opacity
 
 # Colors
-client.focused #ABB2BF #1E2127 #ABB2BF #FFFFFF #ABB2BF
+client.focused #ABB2BF #1E2127 #ABB2BF #ABB2BF #ABB2BF
+client.unfocused #ABB2BF #1E2127 #ABB2BF #494949 #494949
 
 # Font for title bar
 font $uifont

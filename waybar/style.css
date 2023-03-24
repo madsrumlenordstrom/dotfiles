@@ -1,84 +1,96 @@
 @define-color background #1e2127;
 @define-color foreground #abb2bf;
 
-@define-color normal-black   #1e2127;
-@define-color normal-red     #e06c75;
-@define-color normal-green   #98c379;
-@define-color normal-yellow  #d19a66;
-@define-color normal-blue    #61afef;
+@define-color normal-black #1e2127;
+@define-color normal-red #e06c75;
+@define-color normal-green #98c379;
+@define-color normal-yellow #d19a66;
+@define-color normal-blue #61afef;
 @define-color normal-magenta #c678dd;
-@define-color normal-cyan    #56b6c2;
-@define-color normal-white   #828791;
+@define-color normal-cyan #56b6c2;
+@define-color normal-white #828791;
 
-@define-color bright-black   #5c6370;
-@define-color bright-red     #e06c75;
-@define-color bright-green   #98c379;
-@define-color bright-yellow  #d19a66;
-@define-color bright-blue    #61afef;
+@define-color bright-black #5c6370;
+@define-color bright-red #e06c75;
+@define-color bright-green #98c379;
+@define-color bright-yellow #d19a66;
+@define-color bright-blue #61afef;
 @define-color bright-magenta #c678dd;
-@define-color bright-cyan    #56b6c2;
-@define-color bright-white   #e6efff;
+@define-color bright-cyan #56b6c2;
+@define-color bright-white #e6efff;
 
-@define-color dim-black   #1e2127;
-@define-color dim-red     #e06c75;
-@define-color dim-green   #98c379;
-@define-color dim-yellow  #d19a66;
-@define-color dim-blue    #61afef;
+@define-color dim-black #1e2127;
+@define-color dim-red #e06c75;
+@define-color dim-green #98c379;
+@define-color dim-yellow #d19a66;
+@define-color dim-blue #61afef;
 @define-color dim-magenta #c678dd;
-@define-color dim-cyan    #56b6c2;
-@define-color dim-white   #828791;
+@define-color dim-cyan #56b6c2;
+@define-color dim-white #828791;
 
 * {
-	border: none;
+	border: 2px;
 	border-radius: 0;
-	font-family: "JetBrainsMono Nerd Font";
+	font-family: "monospace";
 	font-size: 14px;
 	min-height: 0;
 }
 
 window#waybar {
 	background: @background;
+	border: 1px solid @foreground;
 	opacity: 1.00;
 }
 
 #window {
-    color: @foreground;
+	color: @foreground;
 }
 
 #workspaces {
+	border-bottom: 1px solid @foreground;
+	border-top: 1px solid @foreground;
 	margin: 0px;
 }
 
 #workspaces button {
 	background: @background;
-	padding: 1px 10px 1px 10px;
+	padding: 1px 13px 1px 10px;
 }
 
 #workspaces button.focused:hover {
-    color: @foreground;
+	color: @foreground;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+	background-color: #eb4d4b;
+}
+
+#workspaces button#sway-workspace-1 {
+	border-left: 1px solid @foreground;
 }
 
 #workspaces button#sway-workspace-1.focused {
-    color: @normal-red;
+	color: @normal-red;
 }
+
 #workspaces button#sway-workspace-2.focused {
-    color: @normal-green;
+	color: @normal-green;
 }
+
 #workspaces button#sway-workspace-3.focused {
-    color: @normal-yellow;
+	color: @normal-yellow;
 }
+
 #workspaces button#sway-workspace-4.focused {
-    color: @normal-blue;
+	color: @normal-blue;
 }
+
 #workspaces button#sway-workspace-5.focused {
-    color: @normal-magenta;
+	color: @normal-magenta;
 }
+
 #workspaces button#sway-workspace-6.focused {
-    color: @normal-cyan;
+	color: @normal-cyan;
 }
 
 #mode {
@@ -87,36 +99,43 @@ window#waybar {
 	padding: 0 10px;
 }
 
-#custom-date, #clock, #battery, #pulseaudio, #network, #cpu, #memory, #temperature {
+#custom-date,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#temperature {
 	background: @background;
 	padding: 0px 10px 2px 10px;
 	color: @foreground;
+	border-bottom: 1px solid @foreground;
+	border-top: 1px solid @foreground;
 }
 
 #battery {
+	border-right: 1px solid @foreground;
 }
 
-#pulseaudio {
-}
 
-#network {
-}
+#pulseaudio {}
+
+#network {}
+
 #custom-arch {
 	color: #1793d1;
 	padding: 0px 10px 0px 10px;
 	background: @background;
 }
 
-#custom-date {
-}
+#custom-date {}
 
-#custom-power {
-}
+#custom-power {}
 
-#clock {
-}
-#battery {
-}
+#clock {}
+
+#battery {}
 
 @keyframes blink {
 	to {
@@ -125,8 +144,7 @@ window#waybar {
 	}
 }
 
-#battery.charging {
-}
+#battery.charging {}
 
 #battery.critical:not(.charging) {
 	background-color: #f53c3c;
@@ -138,8 +156,6 @@ window#waybar {
 	animation-direction: alternate;
 }
 
-#network {
-}
+#network {}
 
-#pulseaudio {
-}
+#pulseaudio {}
