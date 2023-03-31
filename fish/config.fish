@@ -11,6 +11,10 @@ if status is-interactive
     abbr --add syu paru -Syu
     abbr --add yeet paru -Rcns
     abbr --add hx helix
+    abbr --add mkdir mkdir -p
+    set -x FZF_DEFAULT_COMMAND 'fd --type file --follow'
+    set -x FZF_CTRL_T_COMMAND "command $FZF_DEFAULT_COMMAND . \$dir 2> /dev/null"
+    set -x FZF_DEFAULT_OPTS "--height=60% --layout=reverse --info=inline --border=sharp --no-scrollbar --no-separator --color=16,border:-1 --margin=1"
 end
 
 starship init fish | source
