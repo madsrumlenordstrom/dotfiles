@@ -48,7 +48,9 @@ disabled = false
 ssh_only = true
 
 [memory_usage]
+symbol = "󰍛 "
 disabled = false
+format = "[$symbol$ram( | $swap)]($style) "
 
 [username]
 show_always = true

@@ -21,7 +21,7 @@ set $term alacritty
 set $menu wofi -Imi --show drun | xargs swaymsg exec -- 
 
 # Wallpaper
-set $wallpaper ~/Pictures/wallpapers/monterey-dark.jpg
+set $wallpaper ~/Pictures/wallpapers/monterey-dark.png
 
 # Lock command
 set $lock swaylock -f -i $wallpaper
