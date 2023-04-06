@@ -43,10 +43,10 @@ seat seat0 xcursor_theme Breeze_Snow 32
 ### Idle configuration
 exec swayidle -w \
           timeout 10 'if pgrep -x swaylock; then swaymsg "output * power off"; fi' \
-          resume 'swaymsg "output * dpms on"' \
+          resume 'swaymsg "output * power on"' \
           timeout 600 '$lock' \
-          timeout 610 'swaymsg "output * dpms off"' \
-          resume 'swaymsg "output * dpms on"'
+          timeout 610 'swaymsg "output * power off"' \
+          resume 'swaymsg "output * power on"'
 
 # Lock screen on lid switch
 bindswitch --reload --locked lid:on exec $lock
@@ -55,9 +55,9 @@ bindswitch --reload --locked lid:on exec $lock
 
 # Keyboard
 input "type:keyboard" {
-        xkb_layout dk(mac),us(mac)
-        xkb_options grp:win_space_toggle
-    } 
+   xkb_layout dk(mac_nodeadkeys),us(mac)
+   xkb_options grp:win_space_toggle
+}
 
 # Touchpad
 input "type:touchpad" {
@@ -259,9 +259,10 @@ default_border pixel 1
 set $opacity 0.98
 #   exec_always /usr/share/sway/scripts/inactive-windows-transparency.py --opacity $opacity
 
-# Colors
-client.focused #ABB2BF #1E2127 #ABB2BF #ABB2BF #ABB2BF
-client.unfocused #ABB2BF #1E2127 #ABB2BF #494949 #494949
+# Colors                border  bg      text    indi    child border
+client.focused          #ABB2BF #1E2127 #ABB2BF #ABB2BF #ABB2BF
+client.focused_inactive #ABB2BF #1E2127 #ABB2BF #494949 #494949
+client.unfocused        #ABB2BF #1E2127 #494949 #494949 #494949
 
 # Font for title bar
 font $uifont
