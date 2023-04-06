@@ -1,0 +1,7 @@
+set selection-clipboard clipboard
+set page-padding 5
+set statusbar-v-padding 4
+set statusbar-h-padding 20
+set statusbar-basename true
+set default-bg "#1e2127"
+set font "monospace normal 10"
