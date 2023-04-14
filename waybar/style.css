@@ -106,6 +106,7 @@ window#waybar {
 #network,
 #cpu,
 #memory,
+#language,
 #temperature {
 	background: @background;
 	padding: 0px 10px 2px 10px;
@@ -114,10 +115,9 @@ window#waybar {
 	border-top: 1px solid @foreground;
 }
 
-#battery {
+#language {
 	border-right: 1px solid @foreground;
 }
-
 
 #pulseaudio {}
 

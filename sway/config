@@ -187,9 +187,15 @@ bindsym $mod+Shift+9 move container to workspace number $ws9; workspace $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10; workspace $ws10
 
 # Specify were to put programs
-for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, border normal
 assign [app_id="firefox"] workspace $ws2
 assign [app_id="Code"] workspace $ws3
+
+# Enable floating for some programs
+for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_role="dialog"] floating enable
+for_window [app_id="pcmanfm"] floating enable
+for_window [app_id="nm-connection-editor"] floating enable
 
 # Toggle split
 bindsym $mod+v splitt
