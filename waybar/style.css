@@ -102,12 +102,9 @@ window#waybar {
 #custom-date,
 #clock,
 #battery,
-#pulseaudio,
+#wireplumber,
 #network,
-#cpu,
-#memory,
-#language,
-#temperature {
+#language {
 	background: @background;
 	padding: 0px 10px 2px 10px;
 	color: @foreground;
@@ -118,24 +115,6 @@ window#waybar {
 #language {
 	border-right: 1px solid @foreground;
 }
-
-#pulseaudio {}
-
-#network {}
-
-#custom-arch {
-	color: #1793d1;
-	padding: 0px 10px 0px 10px;
-	background: @background;
-}
-
-#custom-date {}
-
-#custom-power {}
-
-#clock {}
-
-#battery {}
 
 @keyframes blink {
 	to {
@@ -155,7 +134,3 @@ window#waybar {
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 }
-
-#network {}
-
-#pulseaudio {}

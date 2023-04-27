@@ -1,4 +1,6 @@
 {
+    "bar_id": "bar-0",
+    "ipc": true,
 	"layer": "top",
 	"position": "top",
 	"modules-left": [
@@ -10,7 +12,7 @@
 	],
 	"modules-right": [
 		"network",
-		"pulseaudio",
+		"wireplumber",
 		"battery",
 		"sway/language"
 	],
@@ -22,12 +24,6 @@
 	"spacing": 2,
 	"sway/window": {
 		"max-length": 50
-	},
-	"custom/arch": {
-		"format": "{icon}",
-		"format-icons": [
-			""
-		]
 	},
 	"sway/workspaces": {
 		"disable-scroll": true,
@@ -64,44 +60,10 @@
 		"format-disconnected": "睊  Disconnected",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}"
 	},
-	"temperature": {
-		"thermal-zone": 2,
-		"critical-threshold": 90,
-		"format-critical": " {temperatureC:3}°C",
-		"format": " {temperatureC:3}°C",
-		"interval": 1
-	},
-	"cpu": {
-		"format": " {usage:3}%",
-		"tooltip": false,
-		"interval": 1,
-		"min-length": 5
-	},
-	"memory": {
-		"format": " {percentage}%",
-		"interval": 1
-	},
-	"pulseaudio": {
-		"format": "{icon} {volume:3}%",
-		"format-bluetooth": " {volume:3}%",
-		"format-bluetooth-muted": " {icon} {format_source}",
-		"format-muted": " {format_source}",
-		"format-source": "{volume:3}% ",
-		"format-source-muted": "",
-		"format-icons": {
-			"headphone": "",
-			"hands-free": "",
-			"headset": "",
-			"phone": "",
-			"portable": "",
-			"car": "",
-			"default": [
-				"",
-				"",
-				""
-			]
-		},
-		"on-click": "pavucontrol"
+	"wireplumber": {
+		"format": " {volume:3}%",
+		"format-muted": "󰖁 {volume:3}%",
+		"on-click": "helvum",
 	},
 	"battery": {
 		"bat": "BAT0",
@@ -126,12 +88,6 @@
 		"format": " {:%H:%M}",
 		"format-alt": " {:%Y-%m-%d %H:%M}",
 		"interval": 60
-	},
-	"custom/power": {
-		"format": "<span font='JetBrainsMono Nerd Font 13'>{icon}</span>",
-		"format-icons": [
-			""
-		]
 	},
 	"sway/language": {
 		"format": "  {short}",
