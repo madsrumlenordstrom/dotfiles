@@ -1,8 +1,8 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
     abbr --add autoremove "paru -Qtdq | paru -Rcns -"
-    abbr --add la exa -la --icons --colour=automatic --time-style=long-iso
-    abbr --add ll exa -l --icons --colour=automatic --time-style=long-iso
+    abbr --add la exa -la --icons --colour=auto --time-style=long-iso
+    abbr --add ll exa -l --icons --colour=auto --time-style=long-iso
     abbr --add ls exa
     abbr --add ss paru -Ss
     abbr --add si paru -Si
@@ -17,10 +17,17 @@ if status is-interactive
     abbr --add --set-cursor gc git commit -m '"%"'
     abbr --add gs git status
     abbr --add gd git diff
+    abbr --add gp git push
+    abbr --add gb git branch
+    abbr --add gco git checkout
+    abbr --add gl git log
+    abbr --add gpl git pull
+    abbr --add gcl "wl-paste | xargs -I % echo "git clone %" | sh"
 
     # Stuff for fzf
     set -x FZF_DEFAULT_COMMAND 'fd --type file --type directory --follow'
     set -x FZF_CTRL_T_COMMAND "command $FZF_DEFAULT_COMMAND . \$dir 2> /dev/null"
+    set -x FZF_ALT_C_COMMAND "command fd --min-depth 1 --type directory --follow . \$dir 2> /dev/null"
     set -x FZF_DEFAULT_OPTS "--height=60% --layout=reverse --info=inline --border=sharp --preview-window=border-sharp --no-scrollbar --no-separator --color=16,border:-1 --margin=1"
 end
 
