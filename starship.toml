@@ -26,7 +26,7 @@ error_symbol = "[❯](bold red)"
 [cmd_duration]
 min_time = 1_000
 style = "yellow"
-format = "[ $duration]($style)"
+format = "[ $duration]($style)"
 
 [directory]
 style = "blue"
