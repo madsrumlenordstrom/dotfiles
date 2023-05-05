@@ -30,7 +30,7 @@ format = "[ $duration]($style)"
 
 [directory]
 style = "blue"
-read_only = " "
+read_only = " "
 format = "[$read_only]($read_only_style)[ $path]($style) "
 truncation_length = 5 
 truncate_to_repo = true
