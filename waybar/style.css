@@ -1,32 +1,4 @@
-@define-color background #1e2127;
-@define-color foreground #abb2bf;
-
-@define-color normal-black #1e2127;
-@define-color normal-red #e06c75;
-@define-color normal-green #98c379;
-@define-color normal-yellow #d19a66;
-@define-color normal-blue #61afef;
-@define-color normal-magenta #c678dd;
-@define-color normal-cyan #56b6c2;
-@define-color normal-white #828791;
-
-@define-color bright-black #5c6370;
-@define-color bright-red #e06c75;
-@define-color bright-green #98c379;
-@define-color bright-yellow #d19a66;
-@define-color bright-blue #61afef;
-@define-color bright-magenta #c678dd;
-@define-color bright-cyan #56b6c2;
-@define-color bright-white #e6efff;
-
-@define-color dim-black #1e2127;
-@define-color dim-red #e06c75;
-@define-color dim-green #98c379;
-@define-color dim-yellow #d19a66;
-@define-color dim-blue #61afef;
-@define-color dim-magenta #c678dd;
-@define-color dim-cyan #56b6c2;
-@define-color dim-white #828791;
+@import "theme.css";
 
 * {
 	border: 2px;
@@ -37,65 +9,57 @@
 }
 
 window#waybar {
-	background: @background;
-	border: 1px solid @foreground;
+	background: @base;
+	border: 1px solid @overlay0;
 	opacity: 1.00;
 }
 
-#window {
-	color: @foreground;
-}
-
 #workspaces {
-	border-bottom: 1px solid @foreground;
-	border-top: 1px solid @foreground;
+	border-bottom: 1px solid @overlay0;
+	border-top: 1px solid @overlay0;
 	margin: 0px;
 }
 
 #workspaces button {
-	background: @background;
+	background: @base;
 	padding: 1px 13px 1px 10px;
 }
 
 #workspaces button.focused:hover {
-	color: @foreground;
+	color: @text;
 }
 
 #workspaces button.urgent {
-	background-color: #eb4d4b;
+	background-color: @sapphire;
 }
 
 #workspaces button#sway-workspace-1 {
-	border-left: 1px solid @foreground;
+	border-left: 1px solid @overlay0;
 }
 
 #workspaces button#sway-workspace-1.focused {
-	color: @normal-red;
+	color: @red;
 }
 
 #workspaces button#sway-workspace-2.focused {
-	color: @normal-green;
+	color: @green;
 }
 
 #workspaces button#sway-workspace-3.focused {
-	color: @normal-yellow;
+	color: @yellow;
 }
 
 #workspaces button#sway-workspace-4.focused {
-	color: @normal-blue;
+	color: @blue;
 }
 
 #workspaces button#sway-workspace-5.focused {
-	color: @normal-magenta;
-}
-
-#workspaces button#sway-workspace-6.focused {
-	color: @normal-cyan;
+	color: @mauve;
 }
 
 #mode {
-	color: @background;
-	background-color: @normal-red;
+	color: @base;
+	background-color: @red;
 	padding: 0 10px;
 }
 
@@ -105,15 +69,15 @@ window#waybar {
 #wireplumber,
 #network,
 #language {
-	background: @background;
+	background: @base;
 	padding: 0px 10px 2px 10px;
-	color: @foreground;
-	border-bottom: 1px solid @foreground;
-	border-top: 1px solid @foreground;
+	color: @text;
+	border-bottom: 1px solid @overlay0;
+	border-top: 1px solid @overlay0;
 }
 
 #language {
-	border-right: 1px solid @foreground;
+	border-right: 1px solid @overlay0;
 }
 
 @keyframes blink {

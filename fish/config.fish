@@ -28,7 +28,11 @@ if status is-interactive
     set -x FZF_DEFAULT_COMMAND 'fd --type file --type directory --follow'
     set -x FZF_CTRL_T_COMMAND "command $FZF_DEFAULT_COMMAND . \$dir 2> /dev/null"
     set -x FZF_ALT_C_COMMAND "command fd --min-depth 1 --type directory --follow . \$dir 2> /dev/null"
-    set -x FZF_DEFAULT_OPTS "--height=60% --layout=reverse --info=inline --border=sharp --preview-window=border-sharp --no-scrollbar --no-separator --color=16,border:-1 --margin=1"
+    set -x FZF_DEFAULT_OPTS "--height=60% --layout=reverse --info=inline:' ' --border=sharp \
+    --preview-window=border-sharp --no-scrollbar --no-separator --margin=1 --color=16,border:-1 \
+    --color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:red \
+    --color=info:#737994,pointer:#f2d5cf,gutter:-1 \
+    --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:red"
 end
 
 starship init fish | source

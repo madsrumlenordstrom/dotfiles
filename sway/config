@@ -1,3 +1,5 @@
+include theme
+
 ### Variables
 
 # Global font (is actually set in fontconfig)
@@ -201,7 +203,7 @@ assign [app_id="Code"] workspace $ws3
 for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_role="dialog"] floating enable
-for_window [app_id="thunar"] floating enable
+for_window [app_id="Thunar"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
 
 # Toggle split
@@ -265,17 +267,14 @@ smart_gaps off
 # Borders
 smart_borders off
 hide_edge_borders --i3 none
-
-#bindsym $mod+y border pixel 20
 default_border pixel 1
 
-set $opacity 0.98
-#   exec_always /usr/share/sway/scripts/inactive-windows-transparency.py --opacity $opacity
-
-# Colors                border  bg      text    indi    child border
-client.focused          #ABB2BF #1E2127 #ABB2BF #ABB2BF #ABB2BF
-client.focused_inactive #ABB2BF #1E2127 #ABB2BF #494949 #494949
-client.unfocused        #ABB2BF #1E2127 #494949 #494949 #494949
+# Colors                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $overlay0
+client.focused_inactive  $overlay0 $base $text  $rosewater $base
+client.unfocused         $overlay0 $base $text  $rosewater $base
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.background        $base
 
 # Font for title bar
 font $uifont

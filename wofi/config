@@ -1,4 +1,3 @@
-style=/home/madsrumlenordstrom/.config/wofi/style.css
 show=dmenu
 location=center
 width=40%
