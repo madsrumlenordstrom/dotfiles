@@ -22,7 +22,7 @@ window#waybar {
 
 #workspaces button {
 	background: @base;
-	padding: 1px 13px 1px 10px;
+	padding: 1px 10px 1px 5px;
 }
 
 #workspaces button.focused:hover {
@@ -31,10 +31,6 @@ window#waybar {
 
 #workspaces button.urgent {
 	background-color: @sapphire;
-}
-
-#workspaces button#sway-workspace-1 {
-	border-left: 1px solid @overlay0;
 }
 
 #workspaces button#sway-workspace-1.focused {
@@ -55,6 +51,10 @@ window#waybar {
 
 #workspaces button#sway-workspace-5.focused {
 	color: @mauve;
+}
+
+.modules-left>widget:first-child>#workspaces {
+	border-left: 1px solid @overlay0;
 }
 
 #mode {

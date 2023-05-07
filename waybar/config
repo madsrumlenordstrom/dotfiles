@@ -52,10 +52,10 @@
 		"format": "{}"
 	},
 	"network": {
-		"format-wifi": " {signalStrength:3}",
-		"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-		"format-linked": "{ifname} (No IP) ",
-		"format-disconnected": "睊  Disconnected",
+		"format-wifi": " {signalStrength:3}%",
+		"format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+		"format-linked": "{ifname} (No IP)",
+		"format-disconnected": "󰤯  {signalStrength:3}%",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}"
 	},
 	"wireplumber": {
