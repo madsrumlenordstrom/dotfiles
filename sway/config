@@ -201,10 +201,9 @@ assign [app_id="Code"] workspace $ws3
 
 # Enable floating for some programs
 for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable
-for_window [window_type="dialog"] floating enable
-for_window [window_role="dialog"] floating enable
 for_window [app_id="Thunar"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
+for_window [title="Library"] floating enable
 
 # Toggle split
 bindsym $mod+v splitt
