@@ -3,40 +3,31 @@
 # Script to control brightness of screen
 
 ctl=""
-val=0
-
-sleep_dur=0.030
-
+val=3
 msgTag="screen-brightness"
 
-showBright() {
-	bright="$(brightnessctl -m get)" 
-	bright=$(($bright * 100 / 1388))
-	bright=$(($bright + $val))
-	if [ "$bright" -le "0" ]
-	then
-		bright=0
-	fi
-  # Show the volume notification
-  dunstify -a "change-brightness" -u low --icon=/usr/share/icons/Papirus-Dark/symbolic/status/display-brightness-symbolic.svg -h string:x-dunst-stack-tag:$msgTag -h int:value:"$bright" "Screen brightness"
-}
-
+# Get argument
 if [ "$1" = "up" ]
 then
-	ctl="1%+"
-	val=3
+	ctl="$val%+"
 elif [ "$1" = "down" ]
 then
-	ctl="1%-"
-	val=-3
+	ctl="$val%-"
+	val=-$val
 else
-	echo "Print help message"
+	echo "Run script with correct argument:\n$0 <up|down>"
 	exit 1
 fi
 
-showBright
-brightnessctl -q set $ctl
-sleep $sleep_dur
-brightnessctl -q set $ctl
-sleep $sleep_dur
+# Show notification
+bright="$(brightnessctl -m get)" 
+bright=$(($bright * 100 / 1388))
+bright=$(($bright + $val))
+if [ "$bright" -le "0" ]
+then
+	bright=0
+fi
+dunstify -a "change-brightness" -u low --icon=/usr/share/icons/Papirus-Dark/symbolic/status/display-brightness-symbolic.svg -h string:x-dunst-stack-tag:$msgTag -h int:value:"$bright" "Screen brightness"
+
+# Set brightness
 brightnessctl -q set $ctl
