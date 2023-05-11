@@ -11,6 +11,9 @@ if status is-interactive
     abbr --add syu paru -Syu
     abbr --add yeet paru -Rcns
     abbr --add hx helix
+    abbr --add --set-cursor rp "realpath -z % | wl-copy"
+
+    # Git abbreviations
     abbr --add mkdir mkdir -p
     abbr --add ga git add
     abbr --add grs git restore
