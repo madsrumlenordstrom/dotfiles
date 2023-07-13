@@ -1,0 +1,49 @@
+theme = "catppuccin_frappe"
+
+[editor]
+line-number = "relative"
+scrolloff = 8
+shell = ["fish", "-c"]
+cursorline = true
+bufferline = "multiple"
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "block"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode"]
+center = ["file-name"]
+right = ["spinner", "diagnostics", "position", "spacer", "position-percentage", "spacer", "file-encoding", "file-line-ending", "file-type"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+display-messages = true
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+newline = "none"
+
+[editor.indent-guides]
+render = true
+
+[editor.soft-wrap]
+enable = true
+
+[keys.insert]
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"
