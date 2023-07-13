@@ -62,7 +62,7 @@ bindswitch --reload --locked lid:on exec $lock
 
 # Keyboard
 input "type:keyboard" {
-   xkb_layout dk(mac_nodeadkeys),us(mac)
+   xkb_layout dk(mac),us(mac)
    xkb_options grp:alt_caps_toggle
 }
 
