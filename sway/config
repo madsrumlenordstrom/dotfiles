@@ -23,7 +23,7 @@ set $term alacritty
 set $menu wofi -Imi --show drun | xargs swaymsg exec -- 
 
 # Wallpaper
-set $wallpaper ~/Pictures/wallpapers/monterey-dark.png
+set $wallpaper ~/Pictures/wallpapers/the-glow.png
 
 # Lock command
 set $lock swaylock -f -i $wallpaper
@@ -205,7 +205,7 @@ assign [app_id="code-oss"] workspace $ws3
 for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable
 for_window [title="Virtual Machine Manager"] floating enable
 for_window [title="Library"] floating enable
-for_window [app_id="Thunar"] floating enable
+for_window [app_id="thunar"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="code-oss"] floating enable
 

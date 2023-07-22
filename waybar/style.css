@@ -23,7 +23,7 @@ window#waybar {
 #workspaces button {
 	color: @text;
 	background: @base;
-	padding: 1px 20px 1px 15px;
+	padding: 1px 15px 1px 10px;
 }
 
 #workspaces button.focused:hover {
