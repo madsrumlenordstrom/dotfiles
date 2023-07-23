@@ -23,7 +23,7 @@ set $term alacritty
 set $menu wofi -Imi --show drun | xargs swaymsg exec -- 
 
 # Wallpaper
-set $wallpaper ~/Pictures/wallpapers/the-glow.png
+set $wallpaper ~/Pictures/wallpapers/the-glow-transparent.png
 
 # Lock command
 set $lock swaylock -f -i $wallpaper
@@ -36,13 +36,13 @@ xwayland disabled
 output HDMI-A-2 mode 2560x1600@59.972Hz
 
 # Set wallpaper
-output '*' bg $wallpaper fill
+output '*' bg $wallpaper fill #303446
 
 # Start gammastep (blue light filter)
-exec_always gammastep
+exec gammastep
 
 # Start easyeffects
-exec_always easyeffects --gapplication-service
+exec easyeffects --gapplication-service
 
 # Cursor/pointer theme and size
 seat seat0 xcursor_theme Breeze_Snow 32
