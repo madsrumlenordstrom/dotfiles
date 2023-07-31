@@ -1,5 +1,5 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    # Abbreviations
     abbr --add autoremove "paru -Qtdq | paru -Rcns -"
     abbr --add la exa -la --icons --colour=auto --time-style=long-iso
     abbr --add ll exa -l --icons --colour=auto --time-style=long-iso
@@ -36,6 +36,9 @@ if status is-interactive
     --color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:red \
     --color=info:#737994,pointer:#f2d5cf,gutter:-1 \
     --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:red"
+
+    # Keybindings
+    bind \b backward-kill-word
 end
 
 starship init fish | source
