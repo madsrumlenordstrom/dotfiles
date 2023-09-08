@@ -1,9 +1,9 @@
 if status is-interactive
     # Abbreviations
     abbr --add autoremove "paru -Qtdq | paru -Rcns -"
-    abbr --add la exa -la --icons --colour=auto --time-style=long-iso
-    abbr --add ll exa -l --icons --colour=auto --time-style=long-iso
-    abbr --add ls exa
+    abbr --add la eza -la --icons --colour=auto --time-style=long-iso
+    abbr --add ll eza -l --icons --colour=auto --time-style=long-iso
+    abbr --add ls eza
     abbr --add ss paru -Ss
     abbr --add si paru -Si
     abbr --add qi paru -Qi
