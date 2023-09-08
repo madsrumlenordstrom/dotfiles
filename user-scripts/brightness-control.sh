@@ -20,8 +20,9 @@ else
 fi
 
 # Show notification
+max_bright="$(brightnessctl -m max)" 
 bright="$(brightnessctl -m get)" 
-bright=$(($bright * 100 / 1388))
+bright=$(($bright * 100 / max_bright))
 bright=$(($bright + $val))
 if [ "$bright" -le "0" ]
 then
