@@ -9,6 +9,8 @@ This setup uses:
 - Window manager: [sway](https://github.com/swaywm/sway)
 - Status bar: [Waybar](https://github.com/Alexays/Waybar)
 - Launcher: [wofi](https://hg.sr.ht/~scoopta/wofi)
-- Shell: [fish](https://github.com/fish-shell/fish-shell) with [starship](https://github.com/starship/starship) prompt
+- Shell: [fish](https://github.com/fish-shell/fish-shell)
+- Prompt: [starship](https://github.com/starship/starship)
 - Editor: [helix](https://github.com/helix-editor/helix)
+- Font: [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts)
 - Notification-daemon: [dunst](https://github.com/dunst-project/dunst)
