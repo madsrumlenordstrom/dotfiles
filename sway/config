@@ -23,10 +23,13 @@ set $term alacritty
 set $menu wofi -Imi --show drun | xargs swaymsg exec -- 
 
 # Wallpaper
-set $wallpaper ~/Pictures/wallpapers/the-glow-transparent.png
+set $wallpaper "~/Pictures/wallpapers/the-glow-transparent.png"
+
+# Fallback color
+set $fallback "#4c4f69"
 
 # Lock command
-set $lock swaylock -f -i $wallpaper
+set $lock 'swaylock -f -i $wallpaper -c $fallback'
 
 # XWayland
 xwayland disabled
@@ -36,7 +39,7 @@ xwayland disabled
 output HDMI-A-2 mode 2560x1600@59.972Hz
 
 # Set wallpaper
-output '*' bg $wallpaper fill #303446
+output '*' bg $wallpaper fill $fallback
 
 # Start gammastep (blue light filter)
 exec gammastep
@@ -51,7 +54,7 @@ seat seat0 xcursor_theme Breeze_Snow 32
 exec swayidle -w \
           timeout 10 'if pgrep -x swaylock; then swaymsg "output * power off"; fi' \
           resume 'swaymsg "output * power on"' \
-          timeout 600 '$lock' \
+          timeout 600 $lock \
           timeout 610 'swaymsg "output * power off"' \
           resume 'swaymsg "output * power on"'
 
