@@ -19,8 +19,12 @@ hidden = false
 
 [editor.statusline]
 left = ["mode"]
-center = ["file-name"]
-right = ["spinner",
+center = [
+   "file-name",
+   "file-modification-indicator",
+]
+right = [
+"spinner",
    "diagnostics",
    "position",
    "spacer",
@@ -28,7 +32,7 @@ right = ["spinner",
    "spacer",
    "file-encoding",
    "file-line-ending",
-   "file-type"
+   "file-type",
 ]
 mode.normal = "NORMAL"
 mode.insert = "INSERT"

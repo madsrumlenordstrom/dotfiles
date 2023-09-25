@@ -12,6 +12,7 @@ if status is-interactive
     abbr --add yeet paru -Rcns
     abbr --add hx helix
     abbr --add --set-cursor rp "realpath -z % |xargs --null -I -- echo 'wl-copy --' |sh"
+    abbr --add wg "wl-paste | xargs -I % echo 'wget --no-hsts %' | sh"
 
     # Git abbreviations
     abbr --add mkdir mkdir -p
