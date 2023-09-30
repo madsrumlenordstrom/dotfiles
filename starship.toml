@@ -4,7 +4,6 @@ add_newline = false
 format = """
 $username\
 $hostname\
-$localip\
 $directory\
 $git_branch\
 $git_commit\
@@ -58,5 +57,4 @@ format = "[ $user]($style) "
 
 [status]
 disabled = false
-symbol = " "
 format = "[$common_meaning$signal_name$maybe_int]($style) "

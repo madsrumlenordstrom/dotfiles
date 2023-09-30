@@ -1,13 +1,15 @@
 if status is-interactive
     # Abbreviations
     abbr --add autoremove "paru -Qtdq | paru -Rcns -"
-    abbr --add la eza -la --icons --colour=auto --time-style=long-iso
-    abbr --add ll eza -l --icons --colour=auto --time-style=long-iso
+    abbr --add la eza -la --icons --time-style=long-iso
+    abbr --add ll eza -l --icons --time-style=long-iso
     abbr --add ls eza
+    abbr --add tree eza --tree
     abbr --add ss paru -Ss
     abbr --add si paru -Si
     abbr --add qi paru -Qi
     abbr --add qs paru -Qs
+    abbr --add fx paru -Fx
     abbr --add syu paru -Syu
     abbr --add yeet paru -Rcns
     abbr --add hx helix
