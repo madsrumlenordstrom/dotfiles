@@ -45,6 +45,9 @@ disabled = false
 
 [hostname]
 ssh_only = true
+style = 'green'
+ssh_symbol = ' '
+format = '[$ssh_symbol$hostname]($style) '
 
 [memory_usage]
 symbol = "󰍛 "
