@@ -209,6 +209,7 @@ for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable
 for_window [title="Virtual Machine Manager"] floating enable
 for_window [title="Library"] floating enable
 for_window [app_id="thunar"] floating enable
+for_window [app_id="imv"] floating enable
 for_window [app_id="nm-connection-editor"] floating enable
 for_window [app_id="code-oss"] floating enable
 
@@ -272,11 +273,13 @@ smart_gaps off
 smart_borders off
 hide_edge_borders --i3 none
 default_border pixel 1
+default_floating_border pixel 1
+for_window [app_id="imv"] border pixel 1
 
 # Colors                 title     bg    text   indicator  border
 client.focused           $lavender $base $text  $rosewater $overlay0
-client.focused_inactive  $overlay0 $base $text  $rosewater $base
-client.unfocused         $overlay0 $base $text  $rosewater $base
+client.focused_inactive  $overlay0 $base $text  $rosewater $mantle
+client.unfocused         $overlay0 $base $text  $rosewater $mantle
 client.urgent            $peach    $base $peach $overlay0  $peach
 client.background        $base
 
