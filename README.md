@@ -1,8 +1,6 @@
-# dotfiles
-This repository contains various configuration files for my current linux setup.
-It should be considered work in progress as many configurations are incomplete.
-However feel free to takes inspiration from this setup.
-I will upload screenshots when I feel this setup is stable and consistent.
+# Configuration files for my Linux setup
+This repository contains various configuration files for my current Linux setup.
+Feel free to takes inspiration from this setup.
 This setup uses:
 
 - Terminal: [alacritty](https://github.com/alacritty/alacritty)
@@ -14,3 +12,11 @@ This setup uses:
 - Editor: [helix](https://github.com/helix-editor/helix)
 - Font: [JetBrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts)
 - Notification-daemon: [dunst](https://github.com/dunst-project/dunst)
+- Color theme: [Catppuccin Frappe](https://github.com/catppuccin/catppuccin/)
+- Icon theme [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+
+## Screenshots
+![Desktop](images/desktop.png)
+![Applications](images/applications.png)
+![Development](images/development.png)
+![Launcher](images/launcher.png)
