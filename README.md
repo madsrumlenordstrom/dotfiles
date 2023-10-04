@@ -16,7 +16,4 @@ This setup uses:
 - Icon theme [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 
 ## Screenshots
-![Desktop](images/desktop.png)
-![Applications](images/applications.png)
-![Development](images/development.png)
-![Launcher](images/launcher.png)
+![Combined](images/combined.png)
