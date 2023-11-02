@@ -20,7 +20,8 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu wofi -Imi --show drun | xargs swaymsg exec -- 
+set $launcher wofi -Imi --show drun | xargs swaymsg exec -- 
+set $finder fd --type file |wofi -Imi --show dmenu -M fuzzy |xargs xdg-open
 
 # Wallpaper
 set $wallpaper "~/Pictures/wallpapers/the-glow-transparent.png"
@@ -92,8 +93,11 @@ bindsym $mod+Return exec $term
 # Kill focused window
 bindsym $mod+q kill
 
-# Start your launcher
-bindsym $mod+d exec $menu
+# Start app launcher
+bindsym $mod+d exec $launcher
+
+# Start file finder
+bindsym $mod+Shift+d exec $finder
 
 # mouse button for dragging.
 floating_modifier $mod normal
