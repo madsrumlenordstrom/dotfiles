@@ -21,7 +21,7 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $launcher wofi -Imi --show drun | xargs swaymsg exec -- 
-set $finder fd --type file |wofi -Imi --show dmenu -M fuzzy |xargs xdg-open
+set $finder fd --type file |wofi -Imi --show dmenu -M fuzzy |xargs -I {} xdg-open '{}'
 
 # Wallpaper
 set $wallpaper "~/Pictures/wallpapers/the-glow-transparent.png"
