@@ -1,3 +1,8 @@
+# Warning
+This repository is no longer maintained and some configuration may be outdated/deprecated.
+I recently switched to NixOS and I am currently maintaining my system in the nix ecosystem.
+My NixOS configuration shares many similarities with those of this repository so check out my [NixOS configuration](https://github.com/madsrumlenordstrom/nixos-config) if you are interested.
+
 # Configuration files for my Linux setup
 This repository contains various configuration files for my current Linux setup.
 Feel free to takes inspiration from this setup.
